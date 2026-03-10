@@ -1,0 +1,15 @@
+.traffic-light{
+    padding: 15px;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 10px;
+}
+
+.light{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: lightgray;
+}

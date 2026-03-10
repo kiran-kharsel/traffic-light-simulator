@@ -17,14 +17,14 @@ const TrafficLights = [
     color: 'yellow',
     time: 1500, //in ms
     lightingOrder: 2,
-    positionOrder: 2,
+    positionOrder: 1,
   },
   {
     id: 3,
     color: 'green',
     time: 2000, //in ms
     lightingOrder: 3,
-    positionOrder: 3,
+    positionOrder: 1,
   },
 ]
 

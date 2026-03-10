@@ -4,9 +4,13 @@ import './style.css'
 function TrafficLight({data}) {
   return (
     <div className='traffic-light'>
-        <Light/>
-        <Light/>
-        <Light/>
+        {
+            data.map((light) => {
+                return(
+                    <Light key={light.id} color={light.color}/>
+                )
+            })
+        }
     </div>
   )
 }
@@ -16,8 +20,12 @@ export default TrafficLight
 
 // trafic-light component
 
-function Light(){
+function Light({color}){
     return(
-        <div className="light"></div>
+        <div 
+        style={{
+            backgroundColor: color,
+        }}
+        className="light"></div>
     )
 }

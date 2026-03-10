@@ -3,8 +3,21 @@ import './style.css'
 
 function TrafficLight({data}) {
   return (
-    <div>TrafficLight</div>
+    <div className='traffic-light'>
+        <Light/>
+        <Light/>
+        <Light/>
+    </div>
   )
 }
 
 export default TrafficLight
+
+
+// trafic-light component
+
+function Light(){
+    return(
+        <div className="light"></div>
+    )
+}

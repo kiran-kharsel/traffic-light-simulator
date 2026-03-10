@@ -5,9 +5,11 @@ function TrafficLight({data}) {
 
     const getSortedPositionOrder = sortPositionOrder(data)
     const getSortedLightingOrder = sortLightingOrder(data)
+
+
     const [positionOrder, setPositionOrder] = useState(getSortedPositionOrder)
     const [lightingOrder, setLightingOrder] = useState(getSortedLightingOrder)
-    const [activeLight, setActiveLight] = useState(0)
+    const [activeLight, setActiveLight] = useState(positionOrder[0])
 
 
     // sort position
@@ -32,7 +34,10 @@ function TrafficLight({data}) {
         {
             positionOrder.map((light) => {
                 return(
-                    <Light key={light.id} color={light.color}/>
+                    <Light 
+                    key={light.id} 
+                    color={light.color}
+                    activeColor={activeLight.color}/>
                 )
             })
         }
@@ -45,11 +50,12 @@ export default TrafficLight
 
 // trafic-light component
 
-function Light({color}){
+function Light({color, activeColor}){
     return(
         <div 
         style={{
             backgroundColor: color,
+            opacity: color === activeColor ? 1 : 0.2,
         }}
         className="light"></div>
     )
